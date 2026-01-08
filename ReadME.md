@@ -120,7 +120,7 @@ del calor de combustión medido, HOC) de la densidad energética expresada
 en kilojoules por gramo de muestra seca, con y sin corrección por
 cenizas, respectivamente.
 
-## Running assumptions
+## Running assumptions/Supuestos
 
 ### English
 
@@ -292,7 +292,7 @@ containing a complete set of input files.
 
 To run the workflow using the example data, temporarily set:
 
-r path\_ \<- here(“Example”)
+path\_ \<- here(“Example”)
 
 ``` r
 library(readr)

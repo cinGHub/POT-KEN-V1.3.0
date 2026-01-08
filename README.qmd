@@ -86,7 +86,7 @@ Además, el código elimina las columnas que no son necesarias y reasigna los va
 
 Por último, genera dos columnas denominadas **`DE_kJ_g_AFDM`** y **`DE_kJ_g_DM`**, que contienen los valores finales (calculados a partir del calor de combustión medido, HOC) de la densidad energética expresada en kilojoules por gramo de muestra seca, con y sin corrección por cenizas, respectivamente.
 
-## Running assumptions
+## Running assumptions/Supuestos
 
 ### English
 
