@@ -3,7 +3,7 @@ library(dplyr)
 
 # Path// directory where you saved the "determinations" files- calirimeter output
 # Path// directorio donde se guardaron los archivos "determinaciones"- salidas del calorímetro
-#'*CAMBIAR A DIRECTORIO DONDE SE GUARDARON LOS ARCHIVOS .CSV*
+#'*cambiar a directorio donde se guardaron los archivos.CSV*
 #'*change to directory where .csv files where saved*
 
 path_ <- "D:/OneDrive/INVESTIGACION/TECNICAS/Calorimetria/Calorimetro nuevo/Determinaciones"  
@@ -47,17 +47,17 @@ Determinations_ <- Determinations %>%
 Ashes <- read_delim(file.path(path_, "Ashes.csv"), delim = ";")
 Determinations_ <- Determinations_%>%  
   left_join(Ashes %>% 
-              select(SampleID, Ceniza, Ceniza_filtro), by = "SampleID")
+              select(SampleID, Ashes, Spike_Ashes), by = "SampleID")
 
 
 Determinations__AshFree <- Determinations_ %>%
   mutate(DE_kJ_g_DM = as.numeric(HOC) * 0.004186) %>%
   mutate(HOC_corr = case_when(
-    SpikeWt == 0 ~ ((BombEE * DeltaT) - (23 - (Fuse * 23 / 0.0145)) - Acid) / (SampleWt - Ceniza),
-    SpikeWt != 0 ~ ((((((BombEE * DeltaT) - (23 - (Fuse * 23 / 0.0145)) - Acid) / (SampleWt))*(SampleWt-Ceniza))-(3186.128*(SpikeWt-Ceniza_filtro)))/(SampleWt - SpikeWt-Ceniza)))) %>%
+    SpikeWt == 0 ~ ((BombEE * DeltaT) - (23 - (Fuse * 23 / 0.0145)) - Acid) / (SampleWt - Ashes),
+    SpikeWt != 0 ~ ((((((BombEE * DeltaT) - (23 - (Fuse * 23 / 0.0145)) - Acid) / (SampleWt))*(SampleWt-Ashes))-(3186.128*(SpikeWt-Spike_Ashes)))/(SampleWt - SpikeWt-Ashes)))) %>%
   mutate(DE_kJ_g_AFDM = as.numeric(HOC_corr) * 0.004186)
 
 Determinations__AshFree <-Determinations__AshFree %>% 
   select(SampleID, archivo, Timestamp, BombEE, BombName, Mode, Method, State, Units, 
-         SpikeWt, SampleWt, JacketTemp, InitTemp, DeltaT, HOC, Fuse, Acid, Ceniza, Ceniza_filtro, HOC_corr, DE_kJ_g_DM, DE_kJ_g_AFDM, everything())
+         SpikeWt, SampleWt, JacketTemp, InitTemp, DeltaT, HOC, Fuse, Acid, Ashes, Spike_Ashes, HOC_corr, DE_kJ_g_DM, DE_kJ_g_AFDM, everything())
 View(Determinations__AshFree)
