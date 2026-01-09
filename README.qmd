@@ -1,10 +1,8 @@
 ---
-title: "POT-KEN"
+title: "Pot-ken v1.3.0"
 format: gfm
 editor: visual
 ---
-
-# Pot-ken v1.3.0
 
 *Heat in* Selk'nam language / calor en Selk'nam
 

@@ -1,7 +1,5 @@
-# POT-KEN
-
-
 # Pot-ken v1.3.0
+
 
 *Heat in* Selk’nam language / calor en Selk’nam
 
