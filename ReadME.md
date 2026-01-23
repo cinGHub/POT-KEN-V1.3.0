@@ -4,9 +4,10 @@
 *Pot-ken means “heat” in* Selk’nam language / Pot-ken significa *calor*
 en Selk’nam
 
-*A reproducible R workflow for energy density estimation using a Parr
-6725 calorimeter/* Flujo de trabajo reproducible en R para la estimación
-de densidad energética mediante un calorímetro Parr 672**5**
+*A reproducible R workflow for energy density determination using a Parr
+6725 calorimeter/* Flujo de trabajo reproducible en R para la
+determinación de densidad energética mediante un calorímetro Parr
+672**5**
 
 Developed by [Cintia
 Fraysse](https://www.researchgate.net/profile/Cintia-Fraysse?ev=hdr_xprf)
